@@ -3,9 +3,9 @@ import os
 def convert_heic_with_magick(directory, recursive=False):
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.lower().endswith(".heic"):
+            if file.lower().endswith(".jpg"):
                 full_path = os.path.join(root, file)
-                new_file = os.path.splitext(file)[0] + ".jpg"
+                new_file = os.path.splitext(file)[0] + ".jpeg"
                 output_path = os.path.join(root, new_file)
 
                 command = f'magick "{full_path}" "{output_path}"'
@@ -17,4 +17,4 @@ def convert_heic_with_magick(directory, recursive=False):
         if not recursive:
             break
 
-convert_heic_with_magick(r"C:\Users\max3l\Documents\seng474\ss\lecture8", recursive=True)
+convert_heic_with_magick(r"C:\Users\max3l\Documents\seng474\ss\lecture4", recursive=True)
